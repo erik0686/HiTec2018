@@ -4,7 +4,7 @@ class StudentsController < ApplicationController
     @student = Student.new
   end
 
-  def save
+  def create
     @student = Student.create(student_params)
   end
 

@@ -1,1 +1,28 @@
-<h1>HOLA BRACHO</h1>
+<div class="bg"></div>
+<div class="bg bg2"></div>
+<div class="bg bg3"></div>
+<div>HiTec 2018</div>
+<div class="preregister-form">
+  <%= form_for @student do |f| %>
+    <div>
+      <%= f.label :nombre %>
+      <%= f.text_field :name %>
+    </div>
+    <div> 
+      <%= f.label :Email %>
+      <%= f.text_field :email %>
+    </div>
+    <div>
+      <%= f.label "Eres vegano?" %>
+      <%= f.select :vegan, [["Si", true], ["No", false]], include_blank: "Selecciona una opción"  %>
+    </div>
+    <div>
+      <%= f.label :Carrera %>
+      <%= f.text_field :career %>
+    </div>
+    <div>
+      <%= f.submit "Guardar" %>
+    </div>
+
+  <% end %>
+</div>
