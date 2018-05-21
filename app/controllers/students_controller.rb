@@ -8,7 +8,6 @@ class StudentsController < ApplicationController
     @student = Student.create(student_params)
   end
 
-
   private
 
   def student_params
