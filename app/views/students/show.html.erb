@@ -1,0 +1,12 @@
+<div class="bg"></div>
+<div class="bg bg2"></div>
+<div class="bg bg3"></div>
+<div class="logo">
+  <%= image_tag "htpng", class: "hitec-image" %>
+</div>
+<div class="wrap">
+  <h1>Bienvenido <%= @student.name %> !</h1>
+</div>
+<div class="qr-code">
+  <img src="<%= generate_qr(@student.email) %>"/>
+</div>
