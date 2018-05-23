@@ -1,0 +1,154 @@
+@keyframes draw {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes fill-itstm {
+  100% {
+    fill: #fff;
+  }
+}
+
+@keyframes fill-itstv {
+  100% {
+    fill: #98bf13;
+  }
+}
+
+@keyframes fill-itsto {
+  100% {
+    fill: #003d6d;
+  }
+}
+
+@keyframes fill-itstp {
+  100% {
+    fill: #ed8943;
+  }
+}
+
+@keyframes fill-itstl {
+  100% {
+    fill: #2c73b5;
+  }
+}
+
+@keyframes fdeout {
+  100% {
+    display: none;
+    opacity: 0;
+  }
+}
+
+@keyframes fdein {
+  100% {
+    display: none;
+    opacity: 1;
+  }
+}
+
+@keyframes white-stroke {
+  100% {
+    stroke: transparent;
+  }
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+}
+
+svg {
+  left: 25%;
+  margin: 2em auto 0;
+  position: fixed;
+  width: 50%;
+}
+
+.path {
+  animation: draw 2.5s linear forwards, white-stroke .4s 2.5s forwards, fdeout 1s 4s linear forwards;
+}
+
+.st0 {
+  animation: fill-itstm .8s 2.5s forwards;
+}
+
+.st1 {
+  animation: fill-itstv .8s 2.5s forwards;
+}
+
+.st2 {
+  animation: fill-itsto .8s 2.5s forwards;
+}
+
+.st3 {
+  animation: fill-itstp .8s 2.5s forwards;
+}
+
+.st4 {
+  animation: fill-itstl .8s 2.5s forwards;
+}
+
+.cont {
+  margin-top: 65px;
+}
+
+#carouselExampleIndicators {
+  margin-bottom: 60px;
+}
+
+#home {
+  background-color: #fff;
+  border-bottom: 2px solid #000;
+  color: #000;
+  font-size: .9rem;
+}
+
+#what {
+  height: 25rem;
+}
+
+#acts {
+  background-color: #003d6d;
+}
+
+.fadein {
+  animation: fdein .5s 4s linear forwards;
+  opacity: 0;
+  overflow: hidden;
+}
+
+
+@media only screen and (max-width: 1200px) and (min-width: 1001px) {
+  svg {
+    top: 5%;
+  }
+}
+
+@media only screen and (max-width: 1000px) and (min-width: 701px)  {
+  svg {
+    top: 15%;
+  }
+}
+
+@media only screen and (max-width: 700px) and (min-width: 400px) {
+  svg {
+    top: 25%;
+  }
+}
+
+.carousel {
+  height: 35rem;
+}
+
+.carousel-inner {
+  height: 38.5rem;
+}
+
+.carousel-indicators li {
+  background-color: #000;
+}
+
+.carousel-indicators .active {
+  background-color: #fff;
+}
