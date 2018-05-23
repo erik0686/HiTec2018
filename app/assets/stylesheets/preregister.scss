@@ -33,6 +33,10 @@
   width: 600px;
 }
 
+.label-separation {
+  margin-top: 1.5rem;
+}
+
 .logo {
   margin: auto;
   width: 600px;
@@ -42,11 +46,26 @@
   margin: auto;
   position: relative;
   top: 10%;
-  width: 15%;
+  width: 20%;
 }
 
 .preregister-title {
   font-size: 4rem;
+  text-align: center;
+  width: 100%;
+}
+
+.qr-code {
   margin: auto;
-  width: 34%;
+  width: 205px;
+}
+
+.save-student{
+  margin-top: 2rem;
+  width: 85px;
+}
+
+.welcome-student {
+  margin: auto;
+  width: 13%;
 }

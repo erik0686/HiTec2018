@@ -5,26 +5,26 @@
   <%= image_tag "htpng", class: "hitec-image" %>
 </div>
 <p class="preregister-title"> Preregistro HiTec! 2018</p>
-<div class="preregister-form">
+<div class="preregister-form form-group">
   <%= form_for @student do |f| %>
     <div>
       <%= f.label :nombre %>
-      <%= f.text_field :name %>
-    </div>
-    <div> 
-      <%= f.label :Email %>
-      <%= f.text_field :email %>
+      <%= f.text_field :name, class:"form-control"  %>
     </div>
     <div>
-      <%= f.label "Eres vegano?" %>
-      <%= f.select :vegan, [["Si", true], ["No", false]], include_blank: "Selecciona una opción"  %>
+      <%= f.label :Email, class:"label-separation" %>
+      <%= f.text_field :email, class:"form-control" %>
     </div>
     <div>
-      <%= f.label :Carrera %>
-      <%= f.text_field :career %>
+      <%= f.label "Eres vegano?", class:"label-separation" %>
+      <%= f.select :vegan, [["Si", true], ["No", false]], { include_blank: "Selecciona una opción" }, { class:"form-control" }  %>
     </div>
     <div>
-      <%= f.submit "Guardar" %>
+      <%= f.label :Carrera, class:"label-separation" %>
+      <%= f.text_field :career, class:"form-control" %>
+    </div>
+    <div>
+      <%= f.submit "Guardar", class:"btn btn-primary save-student" %>
     </div>
 
   <% end %>
