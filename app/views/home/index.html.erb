@@ -1,1 +1,68 @@
-<h1>HALPERRY ES JOTO</h1>
+<%= render "layouts/navbar" %>
+<%= render "home/initial_logo" %>
+
+<div class="fadein cont">
+	<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+		<ol class="carousel-indicators">
+			<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+			<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+			<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+			<li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+		</ol>
+		<div class="carousel-inner">
+			<div class="carousel-item active">
+				<%= image_tag "first_slide", class: "d-block w-100", alt: "First slide" %>
+			</div>
+			<div class="carousel-item">
+				<%= image_tag "second_slide", class: "d-block w-100", alt: "Second slide" %>
+			</div>
+			<div class="carousel-item">
+				<%= image_tag "third_slide", class: "d-block w-100", alt: "Third slide" %>
+			</div>
+			<div class="carousel-item">
+				<%= image_tag "fourth_slide", class: "d-block w-100", alt: "Fourth slide" %>
+			</div>
+		</div>
+		<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			<span class="sr-only">Previous</span>
+		</a>
+		<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+			<span class="sr-only">Next</span>
+		</a>
+	</div>
+
+	<div id="what" class="container-fluid">
+		<p class="align-middle container" style="padding-top: 8.5rem; text-indent: 1rem;">
+			<span class="font-weight-bold text-uppercase h5">¿Qué es?</span>
+			<br> Hi! Tec es el evento que organizamos los alumnos del Tecnológico de Monterrey, Campus Monterrey, para darte la bienvenida como Borrego de primer ingreso, transferencia o intercambio, durante la semana previa al inicio de clases.
+			<br><br>Habrá actividades dinámicas y una sana competencia que te permitirán integrarte con tus compañeros, y conocer y aprender los elementos que te ayudarán a iniciar con éxito tu vida académica y estudiantil en el campus. </p>
+	</div>
+
+		<div id="acts" class="container-fluid">
+			<small>
+				<div class="container text-white">
+					<p class="align-middle " style="padding-top: 8.5rem; text-indent: 1rem;">
+						<span class="font-weight-bold text-uppercase h5">Actividades</span>
+					</p>
+						<div class="row">
+							<div class="col-6">
+								<button id="jueves" type="button" class="btn btn-block text-white text-uppercase" style="background-color: #98bf13">Jueves 2 de Agosto - Aquí es donde todo comienza</button>
+							</div>
+							<div class="col-6">
+								<button id="viernes" type="button" class="btn btn-block text-white text-uppercase" style="background-color: #ed8943">Viernes 3 de Agosto - Tienes que vivirlo</button>
+							</div>
+						</div>
+						<div class="table-responsive">
+							<%= render "home/table_jueves" %>
+						</div>
+					</div>
+				</small>
+			</div>
+
+		</div>
+
+		<!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script> -->
