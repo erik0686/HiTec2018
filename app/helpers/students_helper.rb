@@ -10,4 +10,8 @@ module StudentsHelper
     "data:image/png;base64,#{base64_output}"
   end
 
+  def vegan?(student)
+    student.vegan ? "Si" : "No"
+  end
+
 end

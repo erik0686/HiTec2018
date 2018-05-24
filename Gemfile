@@ -7,6 +7,8 @@ end
 
 gem 'barby',  '~> 0.6.2'
 gem 'bootstrap', '~> 4.0.0'
+gem 'will_paginate', '3.1.5'
+gem 'bootstrap-will_paginate', '1.0.0'
 gem 'chunky_png'
 gem 'coffee-rails', '~> 4.2'
 gem 'jbuilder', '~> 2.5'
