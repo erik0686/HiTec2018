@@ -1,0 +1,27 @@
+<%= render "layouts/navbar" %>
+
+<h1 class="index-students-title">Participantes</h1>
+ 
+<table class="table table-bordered">
+  <tr>
+    <th>Nombre</th>
+    <th>Apellido</th>
+    <th>Email</th>
+    <th>Carrera</th>
+    <th>Vegano</th>
+
+  </tr>
+  <% @students.each do |student| %>
+    <tr>
+        <td><%= student.name %></td>
+        <td><%= student.last_name %></td>
+        <td><%= student.email %></td>
+        <td><%= student.career %></td>
+        <td><%= vegan?(student) %> </td>
+    </tr>
+  <% end %>
+</table>
+<div align="center">
+  <%= will_paginate %>
+</div>
+
