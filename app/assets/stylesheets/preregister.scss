@@ -50,9 +50,15 @@
 }
 
 .preregister-title {
+  color: #fff;
+  font-family: 'Bangers', cursive;
   font-size: 4rem;
   text-align: center;
+  text-shadow: 5px 5px 0 rgba(0, 0, 0, .7);
+  text-transform: uppercase;
   width: 100%;
+  white-space: nowrap;
+  z-index: 1000;
 }
 
 .qr-code {

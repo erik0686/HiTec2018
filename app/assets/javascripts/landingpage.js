@@ -1,7 +1,6 @@
 $( document ).ready(function() {
 
   $("#jueves").click(function() {
-    console.log("ERIK");
       $("#tablebody").empty();
       $("#tablebody").append("<tr>");
       $("#tablebody").append('<td scope="row" style="border-bottom: 0.1rem solid #98bf13;">9:30 h</td>');

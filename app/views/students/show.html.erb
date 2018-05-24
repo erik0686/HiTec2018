@@ -5,7 +5,7 @@
   <%= image_tag "htpng", class: "hitec-image" %>
 </div>
 <div class="wrap">
-  <h1>Bienvenido <%= @student.name %> !</h1>
+  <h1>Bienvenida <%= @student.name %> !</h1>
 </div>
 <div class="qr-code">
   <img src="<%= generate_qr(@student.email) %>"/>
