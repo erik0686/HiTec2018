@@ -1,5 +1,21 @@
 $( document ).ready(function() {
 
+      $(window).resize(function() {
+      if ($(window).width() > 960) {
+         $("#jueves").html("Jueves 2 de Agosto - Aquí es Donde Todo Comienza");
+         $("#viernes").html("Viernes 3 de Agosto - Tienes que Vivirlo");
+      }
+      if ($(window).width() < 1200 && $(window).width() > 500) {
+         $("#jueves").html("Jueves 2 de Agosto");
+         $("#viernes").html("Viernes 3 de Agosto");
+      }
+      if ($(window).width() < 500) {
+         $("#jueves").html("2 de Agosto");
+         $("#viernes").html("3 de Agosto");
+      }
+
+    });
+
   $("#jueves").click(function() {
       $("#tablebody").empty();
       $("#tablebody").append("<tr>");
