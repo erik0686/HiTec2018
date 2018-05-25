@@ -14,4 +14,10 @@ module StudentsHelper
     student.vegan ? "Si" : "No"
   end
 
+  def career_options
+    ["ARQ", "LADt", "LAEt", "LAF", "LBCt", "LCDE", "LCMDt", "LCPF", "LDIt", "LDF", "LEC", "LED", "LEM", "LIN", "LLE", "LNB", "LPL", "LPM", "LPO", "LPS",
+     "LRI", "LTSt", "IBTt", "IC", "IDA", "IDS", "IFI", "IIA", "IIDt", "IIS", "IMA", "IMD", "IME", "IMI", "IMT", "INCQ", "INT", "IQA", "IQP", "ISDR",
+     "ITC", "ITIt", "MC", "MO"]
+  end
+
 end
