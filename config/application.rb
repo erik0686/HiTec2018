@@ -27,6 +27,7 @@ module HiTec2018
 
     # Don't generate system test files.
     config.assets.initialize_on_precompile = false
+    config.serve_static_assets = true
 
     config.generators.system_tests = nil
   end
