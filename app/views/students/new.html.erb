@@ -1,35 +1,38 @@
+<%= render "layouts/navbar" %>
 <div class="bg"></div>
 <div class="bg bg2"></div>
 <div class="bg bg3"></div>
-<div class="logo">
-  <%= image_tag "htpng", class: "hitec-image" %>
-</div>
-<p class="preregister-title"> Preregistro HiTec! 2018</p>
-<div class="preregister-form form-group">
-  <%= form_for @student do |f| %>
-    <div>
-      <%= f.label :nombre %>
-      <%= f.text_field :name, class:"form-control"  %>
+
+<div class="container-fluid">
+  <%= image_tag "htpng", class:"form-logo" %>
+  <h1 class="text-uppercase text-white" style="text-align: center;"> ¡Aquí es donde todo comienza! </h1>
+  <div class="container">
+    <%= form_for @student, class: "text-white frm form-style"  do |f| %>
+    <div class="form-group">
+      <%= f.label "Nombre(s)" %>
+      <%= f.text_field :name, class:"form-control", id:"name" %>
     </div>
-    <div>
+    <div class="form-group">
       <%= f.label :apellidos, class:"label-separation" %>
-      <%= f.text_field :last_name, class:"form-control" %>
+      <%= f.text_field :last_name, class:"form-control", id:"lastname" %>
     </div>
-    <div>
-      <%= f.label :Email, class:"label-separation" %>
-      <%= f.text_field :email, class:"form-control" %>
+    <div class="form-group">
+      <%= f.label :Correo, class:"label-separation" %>
+      <%= f.text_field :email, class:"form-control", id:"email" %>
     </div>
-    <div>
+    <div class="form-group">
+      <%= f.label :carrera, class:"label-separation" %>
+      <%= f.select :career, career_options, { include_blank: "Selecciona una opción" }, { class:"form-control" }  %>
+    </div>
+    <div class="form-group">
       <%= f.label "Eres vegano?", class:"label-separation" %>
       <%= f.select :vegan, [["Si", true], ["No", false]], { include_blank: "Selecciona una opción" }, { class:"form-control" }  %>
     </div>
     <div>
-      <%= f.label :Carrera, class:"label-separation" %>
-      <%= f.text_field :career, class:"form-control" %>
+      <%= f.submit "Enviar", class:"btn btn-primary mt-3", style:"margin-bottom: 3rem;" %>
     </div>
-    <div>
-      <%= f.submit "Guardar", class:"btn btn-primary save-student" %>
-    </div>
-
-  <% end %>
+    <% end %>
+  </div>
 </div>
+
+<%= render "layouts/footer" %>
