@@ -2,7 +2,7 @@ $( document ).ready(function() {
 
    if ($(window).width() < 1021) {
       $("#removecarousel").html('<img class="img-fluid" alt="2y3Agosto" src="/assets/dia.jpg" style="margin-top: 4rem;">');
-      
+
    }
 
    if ($(window).width() > 1021) {
