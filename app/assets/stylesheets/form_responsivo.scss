@@ -1,0 +1,51 @@
+@media only screen and (min-width: 992px) {
+    .frm{
+      width: 75%;
+    }
+}
+
+.form-logo {
+  display: block;
+  height: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 4rem;
+  width: 50%;
+}
+
+.logostudent{
+  margin-top: 5rem;
+}
+
+.form-style {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media only screen and (min-height: 654px) {
+  .footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+}
+
+@media only screen and (min-height: 1025px) {
+  .footerfrm{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 700px) {
+  .frmrsp .logostudent{
+    width: 30rem;
+    height: 7.5rem;
+  }
+
+  .frmrsp h1{
+    font-size: 2rem;
+  }
+}

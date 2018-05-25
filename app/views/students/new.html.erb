@@ -1,1 +1,38 @@
-<h1>HOLA BRACHO</h1>
+<%= render "layouts/navbarform" %>
+<div class="bg"></div>
+<div class="bg bg2"></div>
+<div class="bg bg3"></div>
+
+<div class="container-fluid">
+  <%= image_tag "htpng", class:"form-logo" %>
+  <h1 class="text-uppercase text-white" style="text-align: center;"> ¡Aquí es donde todo comienza! </h1>
+  <div class="container">
+    <%= form_for @student, html:{class: "text-dark frm form-style"}  do |f| %>
+    <div class="form-group">
+      <%= f.label "Nombre(s)" %>
+      <%= f.text_field :name, class:"form-control", id:"name", required: true %>
+    </div>
+    <div class="form-group">
+      <%= f.label :apellidos, class:"label-separation" %>
+      <%= f.text_field :last_name, class:"form-control", id:"lastname", required: true %>
+    </div>
+    <div class="form-group">
+      <%= f.label :Correo, class:"label-separation" %>
+      <%= f.text_field :email, class:"form-control", id:"email", required: true %>
+    </div>
+    <div class="form-group">
+      <%= f.label :carrera, class:"label-separation" %>
+      <%= f.select :career, career_options, { include_blank: "Selecciona una opción" }, { class:"form-control", required: true }  %>
+    </div>
+    <div class="form-group">
+      <%= f.label "Eres vegano/a?", class:"label-separation" %>
+      <%= f.select :vegan, [["Si", true], ["No", false]], { include_blank: "Selecciona una opción" }, { class:"form-control", required: true }  %>
+    </div>
+    <div>
+      <%= f.submit "Enviar", class:"btn btn-primary mt-3", style:"margin-bottom: 3rem;" %>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+<%= render "layouts/footerform" %>

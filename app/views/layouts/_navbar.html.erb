@@ -1,0 +1,20 @@
+<nav id="home" class="fadein navbar navbar-expand-lg navbar-light py-0 fixed-top">
+	<a data-turbolinks="false" class="navbar-brand" href="https://tec.mx/es"><%= image_tag "tec", class: "img-fluid", alt: "Responsive Image" %></a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarNav">
+		<ul class="navbar-nav">
+			<li class="nav-item">
+				<a class="nav-link text-dark" href="#what" data-turbolinks="false">¿QUÉ ES?</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link text-dark" href="#acts" data-turbolinks="false">ACTIVIDADES</a>
+			</li>
+			<li class="nav-item">
+				<%= link_to "PREREGISTRO", new_student_path, class:"nav-link text-dark" %>
+			</li>
+		</ul>
+		<%= image_tag "htlogo1", class: "img-fluid tecimg", alt: "Responsive Image" %>
+	</div>
+</nav>

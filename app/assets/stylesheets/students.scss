@@ -1,3 +1,21 @@
-// Place all the styles related to the students controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import url(https://fonts.googleapis.com/css?family=Bangers);
+
+.wrap {
+  margin: 0 auto;
+}
+
+h1 {
+  color: #fff;
+  font-family: 'Bangers', cursive;
+  font-size: 6vw;
+  font-weight: normal;
+  text-align: center;
+  text-shadow: 5px 5px 0 rgba(0, 0, 0, .7);
+  text-transform: uppercase;
+  white-space: nowrap;
+  z-index: 1000;
+}
+
+.index-students-title {
+  margin-top: 4.5rem;
+}

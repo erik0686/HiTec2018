@@ -1,1 +1,44 @@
-<h1>HALPERRY ES JOTO</h1>
+<%= render "layouts/navbar" %>
+<%= render "home/initial_logo" %>
+
+<div class="fadein cont">
+
+	<div id="removecarousel">
+	
+	</div>
+
+	<div id="what" class="container-fluid">
+		<p class="align-middle container" style="padding-top: 4rem; padding-bottom: 4rem; text-indent: 1rem;">
+			<span class="font-weight-bold text-uppercase h5">¿Qué es?</span>
+			<br> Hi! Tec es un evento organizado por alumnos para alumnos, con la finalidad de darte la bienvenida al Tecnológico de Monterrey Campus Monterrey. Si eres alumno de primer ingreso, transferencia o intercambio; Hi!Tec es tu oportunidad de conocer gente nueva, las instalaciones de tu nueva casa y ponerte la camiseta azul Tec.
+			<br><br>Podrás disfrutar de diferentes actividades y dinámicas que a través de una sana competencia te permitirá integrarte con nuevos compañeros, además de conocer y aprender sobre los elementos que te ayudarán a iniciar con éxito tu vida académica y estudiantil dentro del campus.</p>
+	</div>
+
+		<div id="acts" class="container-fluid">
+			<small>
+				<div class="container text-white">
+					<p class="align-middle " style="padding-top: 8.5rem; text-indent: 1rem;">
+						<span class="font-weight-bold text-uppercase h5">Actividades</span>
+					</p>
+						<div class="row">
+							<div class="col-6">
+								<button id="jueves" type="button" class="btn btn-block text-white text-uppercase" style="background-color: #98bf13">Jueves 2 de Agosto - Aquí es donde todo comienza</button>
+							</div>
+							<div class="col-6">
+								<button id="viernes" type="button" class="btn btn-block text-white text-uppercase" style="background-color: #ed8943">Viernes 3 de Agosto - Tienes que vivirlo</button>
+							</div>
+						</div>
+						<div class="table-responsive">
+							<%= render "home/table_jueves" %>
+						</div>
+					</div>
+				</small>
+			</div>
+
+		</div>
+
+		<%= render "layouts/footer" %>
+
+		<!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script> -->
