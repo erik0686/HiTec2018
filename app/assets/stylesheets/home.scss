@@ -1,3 +1,11 @@
-// Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.is-invisible {
+  display: none;
+}
+
+.schedule-row-jueves {
+  border-bottom: 0.1rem solid #98bf13;
+}
+
+.schedule-row-viernes {
+  border-bottom: 0.1rem solid #ed8943;
+}
