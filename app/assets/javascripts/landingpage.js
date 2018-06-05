@@ -1,4 +1,4 @@
-$( document ).ready(function() {
+$( document ).on('turbolinks:load', function() {
 
    if ($(window).width() < 1021) {
       $("#removecarousel").html('<img class="img-fluid" alt="2y3Agosto" src="/assets/dia.png" style="margin-top: 4rem;">');
