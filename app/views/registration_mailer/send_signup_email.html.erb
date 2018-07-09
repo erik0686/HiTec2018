@@ -6,6 +6,6 @@
   <body>
     <h1>Te esperamos en este evento que hemos preparado para ti!</h1>
     Tu Codigo QR esta guardado en este <%= link_to "link", student_url(@student.id) %>, no olvides tenerlo a la mano el dia de Hi!Tec
-    <img src="<%= generate_qr(@student.id.to_s) %>">
+    <img src="<%= generate_qr(@student.email) %>">
   </body>
 </html>
