@@ -10,7 +10,8 @@ class StudentsController < ApplicationController
 
   def create
     @student = Student.create(student_params)
-    RegistrationMailer.send_signup_email(@student).deliver
+    email = params[:email]
+    RegistrationMailer.send_signup_email(@student, email).deliver
     redirect_to student_path(@student) if @student.save
   end
 

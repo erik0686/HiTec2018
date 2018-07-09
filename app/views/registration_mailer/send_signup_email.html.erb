@@ -1,11 +1,59 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
-  </head>
-  <body>
-    <h1>Te esperamos en este evento que hemos preparado para ti!</h1>
-    Tu Codigo QR esta guardado en este <%= link_to "link", student_url(@student.id) %>, no olvides tenerlo a la mano el dia de Hi!Tec
-    <img src="<%= generate_qr(@student.email) %>">
-  </body>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+
+    <img src="img/htpng.png" style=" height: 50%; width: 50%; margin-left: auto; margin-right: auto; display: block;">
+
+    <h4 class="text-uppercase" style="text-align: center;">¡Te damos la bienvenida a <br>esta nueva etapa que comenzarás en el Tec de Mty! </h4>
+    <br>
+    <p>English below.</p>
+    <p>Hi!Tec es un evento organizado por alumnos para ti, con la finalidad de darte la bienvenida al Tecnológico de Monterrey, Campus Monterrey. Hi!Tec será tu oportunidad de conocer gente nueva, las instalaciones de tu nueva casa y ponerte la camiseta azul Tec.
+
+    <br><br>Durante estos dos días podrás disfrutar de diferentes actividades y dinámicas que a través de una sana competencia te permitiráń integrarte con tus nuevos compañeros, además de conocer y aprender sobre los elementos que te ayudarán a iniciar con éxito tu vida académica y estudiantil dentro del campus.
+
+    <br><br>Al final de este correo encontrarás un código QR único, éste te servirá para tu registro y las diferentes actividades que tendremos durante el evento. En caso de no poder visualizar tu código QR, dirígete a este <%= link_to "link", student_url(@student.id) %>.
+
+    <br><br>En caso de tener alguna duda sobre el evento, te pedimos que nos la hagas llegar a través del grupo de FB. En caso de no estar en dicho grupo, te pedimos accedas al siguiente enlace <a href="http://bit.ly/GrupoFB18">Generación Ago'18</a>.
+
+    <br><br>Esperamos que disfrutes el resto de tus vacaciones,
+    <br>Equipo Organizador de Hi!Tec2018.
+    </p>
+
+    <hr style="border-top:1px dashed black;">
+
+    <h4 class="text-uppercase" style="text-align: center;">¡We welcome you to this new stage at Tec de Mty! </h4>
+    <br>
+    <p>Hi!Tec is an event organized by students for you, with the purpose of welcoming you to Tecnológico de Monterrey, Campus Monterrey. Hi!Tec will be your opportunity to meet new people, the facilities of your new home and wear the Tec shirt.
+
+    <br><br>During these two days you will be able to enjoy different activities that through a friendly competition will allow you to integrate with your new colleagues, besides knowing and learning about the elements that will help you to start your academic and student life successfully on campus.
+
+    <br><br>At the end of this email you will find a unique QR code, this will be useful for your registration and the different activities that we will have during the event. In case that you are not able to see the QR code, please click on this <%= link_to "link", student_url(@student.id) %>.
+
+    <br> <br> If you have any questions about the event, we ask you to send it to us to the next mail by clicking the next link <a href="mailto:info.hitecmty@gmail.com?Subject=HiTec%Doubt" target="_top" >info.hitecmty@gmail.com</a>.
+    <br><br><br> <img src="<%= generate_qr(@email) %>"> <br><br><br>
+
+
+    <br><br>We hope you enjoy the rest of your summer,
+    <br>Organizing Team of Hi!Tec2018.
+    </p>
+
+  </div>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+</body>
 </html>
