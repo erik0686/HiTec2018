@@ -1,8 +1,8 @@
 <%= render "layouts/navbar" %>
 
 <h1 class="index-students-title">Participantes</h1>
- 
-<table class="table table-bordered">
+
+<table class="table table-bordered table-center">
   <tr>
     <th>Nombre</th>
     <th>Apellido</th>
@@ -21,7 +21,9 @@
     </tr>
   <% end %>
 </table>
-<div align="center">
-  <%= will_paginate %>
+<div class="pagination">
+  <div class="page_info">
+    <%= page_entries_info @students %>
+  </div>
+  <%= will_paginate @students, :container => false %>
 </div>
-

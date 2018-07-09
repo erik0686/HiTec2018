@@ -1,4 +1,5 @@
 class RegistrationMailer < ActionMailer::Base
+  helper MailerHelper
   default :from => 'donotreply@hitec.com'
 
   # send a signup email to the user, pass in the user object that   contains the user's email address
