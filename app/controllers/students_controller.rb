@@ -5,7 +5,8 @@ class StudentsController < ApplicationController
   end
 
   def index
-    @students = Student.paginate(page: params[:page], per_page: 10)
+    @search = Student.ransack(params[:q])
+    @students = @search.result.paginate(page: params[:page], per_page: 10)
   end
 
   def create
