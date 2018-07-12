@@ -16,9 +16,13 @@ module StudentsHelper
 
   def career_options
     ["ARQ", "IBTt", "IC", "IDA", "IDS", "IFI", "IIA", "IIDt", "IIS", "IMA", "IMD", "IME",
-     "IMI", "IMT", "INCQ", "INT", "IQA", "IQP", "ISDR", "ITC", "ITIt", "LADt", "LAEt", 
-     "LAF", "LBCt", "LCDE", "LCMDt", "LCPF", "LDIt", "LDF", "LEC", "LED", "LEM", "LIN", 
+     "IMI", "IMT", "INCQ", "INT", "IQA", "IQP", "ISDR", "ITC", "ITIt", "LADt", "LAEt",
+     "LAF", "LBCt", "LCDE", "LCMDt", "LCPF", "LDIt", "LDF", "LEC", "LED", "LEM", "LIN",
      "LLE", "LNB", "LPL", "LPM", "LPO", "LPS", "LRI", "LTSt", "MC", "MO"]
+  end
+
+  def students_careers
+    Student.pluck(:career).uniq
   end
 
 end

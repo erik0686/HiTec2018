@@ -10,8 +10,12 @@
   <%= f.search_field :last_name_cont %>
   <br>
   <%= f.label :Carrera %>
-  <%= f.text_field :career_in, class: "career_search", "data-pre" => career_options%>
+  <%= f.search_field :career_cont, class: "career_search" %>
   <br>
+  <% students_careers.each do |career| %>
+     <%= check_box_tag('q[career_eq_any][]', career ) %>
+     <%= career %>
+  <% end %>
   <%= f.submit%>
 <% end %>
 
