@@ -2,12 +2,29 @@
 
 <h1 class="index-students-title">Participantes</h1>
 
+<%= search_form_for @search do |f|%>
+  <%= f.label :Nombre %>
+  <%= f.search_field :name_cont %>
+  <br>
+  <%= f.label :Apellido %>
+  <%= f.search_field :last_name_cont %>
+  <br>
+  <%= f.label :Carrera %>
+  <%= f.search_field :career_cont, class: "career_search" %>
+  <br>
+  <% students_careers.each do |career| %>
+     <%= check_box_tag('q[career_eq_any][]', career ) %>
+     <%= career %>
+  <% end %>
+  <%= f.submit%>
+<% end %>
+
 <table class="table table-bordered table-center">
   <tr>
     <th>Nombre</th>
     <th>Apellido</th>
     <th>Email</th>
-    <th>Carrera</th>
+    <th><%= sort_link(@search, :career, "Carrera") %></th>
     <th>Vegano</th>
 
   </tr>
