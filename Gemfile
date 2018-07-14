@@ -11,6 +11,7 @@ gem 'will_paginate', '3.1.5'
 gem 'bootstrap-will_paginate', '1.0.0'
 gem 'chunky_png'
 gem 'coffee-rails', '~> 4.2'
+gem 'google_drive'
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
@@ -27,6 +28,7 @@ gem 'scss_lint', require: false
 gem 'therubyracer'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
+
 
 
 
