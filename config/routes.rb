@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   resources :careers, only: [:index]
   resources :students
   resources :home, only: [:index]
+  resources :colors
+  resources :buildings
   root 'home#index'
 
 end

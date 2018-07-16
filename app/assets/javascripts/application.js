@@ -15,5 +15,4 @@
 //= require rails-ujs
 //= require turbolinks
 //= require bootstrap
-//= require vendor/jquery.tokeninput
 //= require_tree .
