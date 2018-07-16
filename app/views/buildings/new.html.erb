@@ -7,7 +7,10 @@
   <%= form_for @building, html:{class: "text-dark frm form-style"}  do |f| %>
     <div class="form-group">
       <%= label_tag "Edificio" %>
-      <%= text_field_tag "name", nil, class:"form-control", id:"name", required: true %>
+      <%= f.text_field :name, class:"form-control", required: true %>
+
+      <%= label_tag "Color al que pertenece" %>
+      <%= f.select :color_id, Color.all.collect {|color| [ color.name, color.id ] }, class:"form-control", required: true %>
     </div>
     <div>
       <%= f.submit "Enviar", class:"btn btn-primary mt-3", style:"margin-bottom: 3rem;" %>
