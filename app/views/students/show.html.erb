@@ -10,7 +10,7 @@
 		<p>Por favor toma screenshot de éste código QR, lo necesitarás para tu registro de Hi!Tec2018</p>
 	</div>
 	<div class="qr-code">
-		<img src="<%= generate_qr("#{@student.id.to_s} #{@matricula}") %>">
+		<img src="<%= generate_qr(@matricula) %>">
 	</div>
 </div>
 
