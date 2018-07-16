@@ -6,4 +6,9 @@ class ColorsController < ApplicationController
     def create 
         @color = Color.create(color_params)
     end
+
+    private
+    def color_params
+        params.require(:student).permit(:name)
+    end
 end
