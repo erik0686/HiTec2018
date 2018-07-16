@@ -1,0 +1,18 @@
+<%= render "layouts/navbarform" %>
+<div class="bg"></div>
+<div class="bg bg2"></div>
+<div class="bg bg3"></div>
+<div class="container-fluid">
+  <%= image_tag "htpng.png", class:"form-logo" %>
+  <%= form_for @color, html:{class: "text-dark frm form-style"}  do |f| %>
+    <div class="form-group">
+      <%= label_tag "Color" %>
+      <%= f.text_field :name, class:"form-control", required: true %>
+    </div>
+    <div>
+      <%= f.submit "Actualizar", class:"btn btn-primary mt-3", style:"margin-bottom: 3rem;" %>
+    </div>
+  <% end %>
+</div>
+
+<%= render "layouts/footerform" %>

@@ -1,0 +1,14 @@
+<%= render "layouts/navbarform" %>
+<div class="bg"></div>
+<div class="bg bg2"></div>
+<div class="bg bg3"></div>
+<div class="container-fluid">
+  <%= image_tag "htpng.png", class:"form-logo" %>
+  <% @colors.each do |color| %>
+    <%= color.name %>
+    <%= link_to 'Destroy',  { action: :destroy, id: color.id }, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+  <% end %>
+</div>
+
+<%= render "layouts/footerform" %>

@@ -15,6 +15,20 @@ ActiveRecord::Schema.define(version: 20180714031053) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "buildings", force: :cascade do |t|
+    t.string "name"
+    t.bigint "color_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["color_id"], name: "index_buildings_on_color_id"
+  end
+
+  create_table "colors", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "students", force: :cascade do |t|
     t.string "career"
     t.datetime "created_at", null: false
@@ -40,4 +54,5 @@ ActiveRecord::Schema.define(version: 20180714031053) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "buildings", "colors"
 end
