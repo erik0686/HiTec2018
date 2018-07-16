@@ -1,5 +1,4 @@
 class StudentsController < ApplicationController
-
   def new
     @student = Student.new
   end
@@ -11,18 +10,22 @@ class StudentsController < ApplicationController
 
   def create
     @student = Student.create(student_params)
-    email = params[:email]
-    RegistrationMailer.send_signup_email(@student, email).deliver
-    redirect_to student_path(@student) if @student.save
+    matricula = params[:matricula]
+    if @student.save
+      redirect_to student_path(id: @student.id, name: params[:name], matricula: params[:matricula])
+    end
   end
 
   def show
     @student = Student.find(params[:id])
+    @name = params[:name]
+    @matricula = params[:matricula]
   end
 
   private
 
   def student_params
-    params.require(:student).permit(:name, :last_name, :career, :vegan, :email, :register_id)
+    params.require(:student).permit(:career)
   end
+
 end

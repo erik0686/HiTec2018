@@ -55,5 +55,6 @@ services:
     environment:
       DATABASE_URL: "postgres://postgres:P4Ssw0rD!@db:5432/hitec2018_dev"
       LC_ALL: C.UTF-8
+      SPREADSHEET: "1m0K83TKS93cpwlAYRPTKyWv154ec8FPC7hAbnKuNGEg"
     links:
       - db
