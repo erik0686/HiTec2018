@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get 'registro', to: 'students#registro'
 
   get 'resources', to: 'teams#resources'
-  get 'asistencia', to: 'assistances#new', as: "asistencia"
+  get 'asistencia', to: 'staff_assistances#new', as: "asistencia"
   # Aqui esta la asistencia de lideres tambien
   get '/teams-puntos', to: 'teams#puntos'
 

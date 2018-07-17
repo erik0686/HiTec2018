@@ -1,4 +1,5 @@
-class AssistancesController < ApplicationController
+class StaffAssistancesController < ApplicationController
+  before_action :authenticate_user!, only: [:new]
 
   def new
     @staff_asistencia = StaffAssistance.new
