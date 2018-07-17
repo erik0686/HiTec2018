@@ -16,6 +16,14 @@ class BuildingsController < ApplicationController
     @building = Building.find(params[:id])
   end
 
+  def agregar
+    name = params[:name]
+    Color.all.each do |color|
+      building = Building.new(name:name, color_id: color.id)
+      building.save
+    end
+  end
+
   def update
     @building = Building.find(params[:id])
     if @building.update(building_params)
@@ -26,9 +34,11 @@ class BuildingsController < ApplicationController
   end
 
   def destroy
-    @building = Building.find(params[:id])
-    @building.destroy
-    redirect_to buildings_path
+    Building.all.each do |building|
+      if building.name == params[:name]
+        building.destroy
+      end
+    end
   end
 
   def index
