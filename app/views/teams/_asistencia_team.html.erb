@@ -1,25 +1,6 @@
 <body style="background-color: #002442" class="text-white">
   <script src="https://rawgit.com/sitepoint-editors/jsqrcode/master/src/qr_packed.js"></script>
-  <nav id="home" class="fadein navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #ee8941">
-    <a data-turbolinks="false" class="navbar-brand">Imagen Tec</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link text-white" href="./admin.html" data-turbolinks="false">Administrar</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white" href="./puntos.html" data-turbolinks="false">Puntos</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white" href="./asistenciaTeam.html" data-turbolinks="false">Asistencia</a>
-        </li>
-      </ul>
-      Imagen Hitec
-    </div>
-  </nav>
+  <%= render "layouts/navbarTeam" %>
 
   <div class="container-fluid col-10" style="margin-top: 5rem;">
   	<h2 class="mb-4">Toma de Asistencia</h2>

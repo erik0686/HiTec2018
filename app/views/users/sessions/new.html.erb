@@ -1,8 +1,5 @@
 <body style="background-color: #002442" class="text-white">
-  <nav id="home" class="fadein navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #ee8941">
-    <a data-turbolinks="false" class="navbar-brand">Imagen Tec</a>
-    Imagen Hitec
-  </nav>
+  <%= render "layouts/navbarSimple" %>
   <div class="container" style="height: 100%;">
     <%= form_for resource, as: resource_name, url: session_path(resource_name), html: { class:"form-class"} do |f| %>
       <div class="form-group">

@@ -1,0 +1,17 @@
+<nav id="home" class="navbar navbar-expand-lg navbar-light py-0 fixed-top" style="background-color: #ee8941">
+	<a data-turbolinks="false" class="navbar-brand" href="https://tec.mx/es"><%= image_tag "tecblank.png", class: "img-fluid", alt: "Responsive Image" %></a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarNav">
+		<ul class="navbar-nav">
+			<li class="nav-item">
+				<%= link_to "REGISTRO", registro_path, class:"nav-link text-white"%>
+			</li>
+			<li class="nav-item">
+				<%= link_to "PUNTOS", staffs_puntos_path, class:"nav-link text-white" %>
+			</li>
+		</ul>
+		<%= image_tag "htlogo1.png", class: "img-fluid tecimg", alt: "Responsive Image" %>
+	</div>
+</nav>
