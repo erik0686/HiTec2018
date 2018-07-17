@@ -15,6 +15,7 @@ class StaffsController < ApplicationController
     @staff = Staff.new(staff_params)
     if @staff.save
       redirect_to staff_path(id: @staff.id, matricula: @staff.matricula)
+      Drive.new(ENV["STAFF_SPREADSHEET"]).write_staff(params)
     else
       render 'new'
     end

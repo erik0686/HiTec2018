@@ -1,4 +1,6 @@
 <nav id="home" class="navbar navbar-expand-lg navbar-light py-0 fixed-top" style="background-color: #ee8941">
 	<a data-turbolinks="false" class="navbar-brand" href="https://tec.mx/es"><%= image_tag "tecblank.png", class: "img-fluid", alt: "Responsive Image" %></a>
-	<%= image_tag "htlogo1.png", class: "img-fluid tecimg", alt: "Responsive Image" %>
+	<%= link_to(destroy_user_session_path, method: :delete) do %>
+		<%= image_tag "htlogo1.png", class: "img-fluid tecimg", alt: "Responsive Image" %>
+	<% end %>
 </nav>

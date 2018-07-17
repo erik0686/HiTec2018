@@ -8,14 +8,15 @@ Rails.application.routes.draw do
   resources :buildings
   resources :admins
   resources :staffs
+  resources :staff_assistances
   get 'registro', to: 'students#registro'
 
   get 'resources', to: 'teams#resources'
-  get 'asistencia', to: 'teams#asistencia'
+  get 'asistencia', to: 'staff_assistances#new', as: "asistencia"
   # Aqui esta la asistencia de lideres tambien
-  get 'teams/puntos', to: 'teams#puntos'
+  get '/teams-puntos', to: 'teams#puntos'
 
-  get 'staffs/puntos', to: 'staffs#puntos'
+  get '/staffs-puntos', to: 'staffs#puntos'
 
   post 'colors/agregar', to: 'colors#agregar'
   post 'buildings/agregar', to: 'buildings#agregar'

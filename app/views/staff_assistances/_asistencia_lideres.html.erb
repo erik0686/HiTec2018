@@ -1,6 +1,7 @@
 <body style="background-color: #002442" class="text-white">
   <script src="https://rawgit.com/sitepoint-editors/jsqrcode/master/src/qr_packed.js"></script>
-  <%= render "layouts/navbarTeam" %>
+  <%= render "layouts/navbarSimple" %>
+
 
   <div class="container-fluid col-10" style="margin-top: 5rem;">
   	<h2 class="mb-4">Toma de Asistencia</h2>
@@ -17,10 +18,11 @@
         </select>
       </div>
       <div class="form-group">
-        <input type=text placeholder="   QR Code" class="qrcode-text rounded"><label class=qrcode-text-btn><input type=file accept="image/*" capture=environment onclick="return showQRIntro();" onchange="openQRCamera(this);" tabindex=-1></label>
+        <input type=text placeholder="QR Code" class="qrcode-text rounded"><label class=qrcode-text-btn><input type=file accept="image/*" capture=environment onclick="return showQRIntro();" onchange="openQRCamera(this);" tabindex=-1></label>
         <!--<input type=button value="Go" disabled>-->
       </div>
       <button type="submit" value="Go" class="btn text-white" style="background-color: #97bf11">Toma Asistencia</button>
     </form>
+
   </div>
 </body>
