@@ -1,4 +1,4 @@
 class StaffAssistance < ApplicationRecord
-  belongs_to :staffs
-  belongs_to :assistances
+  belongs_to :staff
+  belongs_to :assistance
 end

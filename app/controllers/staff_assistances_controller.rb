@@ -6,20 +6,21 @@ class StaffAssistancesController < ApplicationController
   end
 
   def create
+    
     @staff_asistencia = StaffAssistance.new(staff_assistances_params)
     staff = Staff.find_by(matricula: params[:matricula])
-    @staff_asistencia.staffs_id = staff.id
+    @staff_asistencia.staff_id = staff.id
     if @staff_asistencia.save
       flash[:notice] = "Asistencia tomada"
       redirect_to asistencia_path
     else
-      render 'new'
+      redirect_to asistencia_path
     end
   end
 
   private
 
   def staff_assistances_params
-    params.require(:staff_assistance).permit(:assistance_id, :staffs_id)
+    params.require(:staff_assistance).permit(:assistance_id, :staff_id)
   end
 end
