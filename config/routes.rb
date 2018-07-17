@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :colors
   resources :buildings
   resources :admins
+  resources :staffs
   get 'registro', to: 'students#registro'
 
   get 'resources', to: 'teams#resources'
@@ -15,7 +16,6 @@ Rails.application.routes.draw do
   get 'teams/puntos', to: 'teams#puntos'
 
   get 'staffs/puntos', to: 'staffs#puntos'
-  get 'staffs/registro', to: 'staffs#registro'
 
   post 'colors/agregar', to: 'colors#agregar'
   post 'buildings/agregar', to: 'buildings#agregar'
