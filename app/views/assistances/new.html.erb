@@ -1,0 +1,5 @@
+<% if current_user.username == "lider" %>
+  <%= render 'asistencia_lideres' %>
+<% elsif current_user.username == "team" %>
+  <%= render 'asistencia_team' %>
+<% end %>

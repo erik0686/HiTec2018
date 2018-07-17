@@ -22,7 +22,7 @@ class StudentsController < ApplicationController
     @matricula = params[:matricula]
   end
 
-  def assistance; end
+  def registro; end
 
   private
 

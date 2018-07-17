@@ -1,0 +1,20 @@
+<body style="background-color: #002442" class="text-white">
+  <script src="https://rawgit.com/sitepoint-editors/jsqrcode/master/src/qr_packed.js"></script>
+  <%= render "layouts/navbarTeam" %>
+
+  <div class="container-fluid col-10" style="margin-top: 5rem;">
+  	<h2 class="mb-4">Toma de Asistencia</h2>
+    <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+
+    <%= form_for @staff_asistencia do |f| %>
+      <div class="form-group">
+        <label for="exampleFormControlSelect1">Día</label>
+        <%= f.select :assistances_id, Assistance.pluck(:name), { include_blank: "Selecciona una opción" }, {class:"form-control", id:"exampleFormControlSelect2", required: true} %>
+      </div>
+      <div class="form-group">
+        <input type=text name="matricula" placeholder="   QR Code" class="qrcode-text rounded"><label class=qrcode-text-btn><input type=file accept="image/*" capture=environment onclick="return showQRIntro();" onchange="openQRCamera(this);" tabindex=-1></label>
+      </div>
+      <%= f.submit "Toma Asistencia", class:"btn text-white", style:"background-color: #97bf11" %>
+    <% end %>
+  </div>
+</body>

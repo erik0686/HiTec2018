@@ -4,10 +4,6 @@ class TeamsController < ApplicationController
 
   end
 
-  def asistencia
-    
-  end
-
   def puntos
 
   end

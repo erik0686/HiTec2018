@@ -10,12 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180717005738) do
+ActiveRecord::Schema.define(version: 20180717213717) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "activities", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "assistances", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -35,6 +41,15 @@ ActiveRecord::Schema.define(version: 20180717005738) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "points"
+  end
+
+  create_table "staff_assistances", force: :cascade do |t|
+    t.bigint "staffs_id"
+    t.bigint "assistances_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["assistances_id"], name: "index_staff_assistances_on_assistances_id"
+    t.index ["staffs_id"], name: "index_staff_assistances_on_staffs_id"
   end
 
   create_table "staffs", force: :cascade do |t|
@@ -81,6 +96,8 @@ ActiveRecord::Schema.define(version: 20180717005738) do
   end
 
   add_foreign_key "buildings", "colors"
+  add_foreign_key "staff_assistances", "assistances", column: "assistances_id"
+  add_foreign_key "staff_assistances", "staffs", column: "staffs_id"
   add_foreign_key "staffs", "buildings"
   add_foreign_key "student_activities", "activities"
   add_foreign_key "student_activities", "students"
