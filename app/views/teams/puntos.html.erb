@@ -1,0 +1,53 @@
+<body style="background-color: #002442" class="text-white">
+  <nav id="home" class="fadein navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #ee8941">
+    <a data-turbolinks="false" class="navbar-brand">Imagen Tec</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link text-white" href="./admin.html" data-turbolinks="false">Administrar</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="./puntos.html" data-turbolinks="false">Puntos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="./asistenciaTeam.html" data-turbolinks="false">Asistencia</a>
+        </li>
+      </ul>
+      Imagen Hitec
+    </div>
+  </nav>
+
+  <div class="container" style="height: 100%; margin-top: 5rem;">
+    <h2 class="mb-4">Agregar Puntos Individuales</h2>
+    <form>
+      <div class="form-group">
+        <label for="user">Actividad</label>
+        <input type="text" class="form-control" id="user" placeholder="Descripción de puntos">
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlSelect1">Color</label>
+        <select class="form-control" id="exampleFormControlSelect1">
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlSelect1">Edificio</label>
+        <select class="form-control" id="exampleFormControlSelect1">
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlSelect1">Puntos</label>
+        <select class="form-control" id="exampleFormControlSelect1">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+      </div>
+      <button type="submit" class="btn text-white" style="background-color: #97bf11">Asignar Puntos</button>
+    </form>
+  </div>
+</body>

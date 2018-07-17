@@ -1,26 +1,25 @@
-<h2>Log in</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+<body style="background-color: #002442" class="text-white">
+  <nav id="home" class="fadein navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #ee8941">
+    <a data-turbolinks="false" class="navbar-brand">Imagen Tec</a>
+    Imagen Hitec
+  </nav>
+  <div class="container" style="height: 100%;">
+    <%= form_for resource, as: resource_name, url: session_path(resource_name), html: { class:"form-class"} do |f| %>
+      <div class="form-group">
+        <label for="user">Usuario</label>
+        <%= f.text_field :username, autofocus: true, class:"form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :Contraseña %><br />
+        <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "Contraseña" %>
+      </div>
+      <% if devise_mapping.rememberable? -%>
+        <div class="field">
+          <%= f.check_box :remember_me %>
+          <%= f.label :remember_me %>
+        </div>
+      <% end -%>
+      <%= f.submit "Enviar", class:"btn text-white", style:"background-color: #97bf11" %>
+    <% end %>
   </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end -%>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
-
-<%= render "users/shared/links" %>
+</body>

@@ -22,6 +22,8 @@ class StudentsController < ApplicationController
     @matricula = params[:matricula]
   end
 
+  def assistance; end
+
   private
 
   def student_params
