@@ -19,7 +19,10 @@ class Drive
 
   def write_staff(params)
     next_line = @ws.num_rows
-    building = Building.find(params[:staff][:building_id])
+    if params[:staff][:role] == "Capitán/a de edificio"
+      building = Building.find(params[:staff][:building_id])
+      @ws[next_line + 1, 8] = "#{building.color.name} #{building.name}"
+    end
     @ws[next_line + 1, 1] = params[:sexo]
     @ws[next_line + 1, 2] = params[:nombre]
     @ws[next_line + 1, 3] = params[:last_name_1]
@@ -27,7 +30,6 @@ class Drive
     @ws[next_line + 1, 5] = params[:staff][:matricula]
     @ws[next_line + 1, 6] = params[:career]
     @ws[next_line + 1, 7] = params[:staff][:role]
-    @ws[next_line + 1, 8] = "#{building.color.name} #{building.name}"
     @ws.save
     @ws.reload
   end
@@ -36,6 +38,24 @@ class Drive
     (1..@ws.num_rows).each do |row|
       if @ws[row, 5].include? matricula
         @ws[row, 8 + assistance] = "Si"
+        @ws.save
+        @ws.reload
+        break
+      end
+    end
+  end
+
+  def write_staff_assistance(id, activity)
+    column_activity = 0
+    (1..@ws.num_cols).each do |col|
+      if @ws[1, col] == activity
+        column_activity = col
+        break
+      end
+    end
+    (1..@ws.num_rows).each do |row|
+      if @ws[row, 1] == id
+        @ws[row, column_activity] = "Si"
         @ws.save
         @ws.reload
         break
@@ -63,6 +83,29 @@ class Drive
     @ws.update_cells(1, num_activity, activity_array)
     @ws[1, @ws.num_cols] = ""
     @ws.save
+  end
+
+  def preregister_student(id, matricula)
+    (1..@ws.num_rows).each do |row|
+      if(@ws[row,4] == matricula)
+        @ws[row,1] = id
+        break
+      end
+    end
+    @ws.save
+    @ws.reload
+  end
+
+  def write_building(student)
+    (1..@ws.num_rows).each do |row|
+      if(@ws[row,1] == student.id.to_s)
+        @ws[row,5] = student.building.color.name
+        @ws[row,6] = student.building.name
+        break
+      end
+    end
+    @ws.save
+    @ws.reload
   end
 
 end

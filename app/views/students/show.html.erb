@@ -6,8 +6,7 @@
 <div class="container-fluid mb-4 frmrsp" >
 	<%= image_tag "htpng.png", class:"form-logo logostudent" %>
 	<div class="wrap">
-		<h1>¡Te esperamos este <br>2 y 3 de Agosto <%= @name %> !</h1>
-		<p>Por favor toma screenshot de éste código QR, lo necesitarás para tu registro de Hi!Tec2018</p>
+		<h1>Bienvenido/a <%= @name %> !</h1>
 	</div>
 	<div class="qr-code">
 		<img src='<%= generate_qr("#{@matricula} #{@id}")%>'>
