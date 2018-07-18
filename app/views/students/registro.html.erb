@@ -4,26 +4,22 @@
 
   <div class="container-fluid col-10" style="margin-top: 5rem;">
   	<h2 class="mb-4">Registro</h2>
-  	<form>
+  	<form class="student-register">
       <div class="form-group">
-        <input type=text placeholder="   QR Code" class="qrcode-text rounded"><label class=qrcode-text-btn><input type=file accept="image/*" capture=environment onclick="return showQRIntro();" onchange="openQRCamera(this);" tabindex=-1></label>
+        <input type=text id="student-qr-code" placeholder="   QR Code" class="qrcode-text rounded"><label class=qrcode-text-btn><input type=file accept="image/*" capture=environment onclick="return showQRIntro();" onchange="openQRCamera(this);" tabindex=-1></label>
         <!--<input type=button value="Go" disabled>-->
       </div>
-      <button type="submit" value="Go" class="btn text-white" style="background-color: #97bf11">Registrar</button>
+      <button type="submit" value="Go" class="btn text-white" data-remote="true" style="background-color: #97bf11">Registrar</button>
     </form>
 
     <form class="mt-4">
       <div class="form-group">
-        <div class="form-group">
-        <label for="user">Folio</label>
-        <input type="text" class="form-control" id="user" disabled>
-      </div>
         <label for="user">Color</label>
-        <input type="text" class="form-control" id="user" disabled>
+        <input type="text" class="form-control" id="user_color" disabled>
       </div>
       <div class="form-group">
         <label for="user">Edificio</label>
-        <input type="text" class="form-control" id="user" disabled>
+        <input type="text" class="form-control" id="user_building" disabled>
       </div>
     </form>
 
