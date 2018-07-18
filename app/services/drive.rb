@@ -32,4 +32,37 @@ class Drive
     @ws.reload
   end
 
+  def write_staff_assistance(matricula, assistance)
+    (1..@ws.num_rows).each do |row|
+      if @ws[row, 5].include? matricula
+        @ws[row, 8 + assistance] = "Si"
+        @ws.save
+        @ws.reload
+        break
+      end
+    end
+  end
+
+  def create_activity(name)
+    next_column = @ws.num_cols
+    @ws[1, next_column + 1] = name
+    @ws.save
+    @ws.reload
+  end
+
+  def delete_activity(name)
+    num_activity = 0
+    (1..@ws.num_cols).each do |col|
+      if(@ws[1,col] == name)
+        num_activity = col
+        break
+      end
+    end
+    activity_array = ((num_activity + 1)..@ws.num_cols).map { |c| @ws[1,c] }
+    activity_array = [activity_array,[]]
+    @ws.update_cells(1, num_activity, activity_array)
+    @ws[1, @ws.num_cols] = ""
+    @ws.save
+  end
+
 end

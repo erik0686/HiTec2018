@@ -8,8 +8,9 @@ Rails.application.routes.draw do
   resources :buildings
   resources :admins
   resources :staffs
-  resources :staff_assistances
+  resources :staff_assistances, only: [:new, :create]
   get 'registro', to: 'students#registro'
+  post 'students/assign_team', to: 'students#assign_team'
 
   get 'resources', to: 'teams#resources'
   get 'asistencia', to: 'staff_assistances#new', as: "asistencia"
