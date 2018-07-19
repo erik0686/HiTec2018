@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180717230036) do
+ActiveRecord::Schema.define(version: 20180719000253) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20180717230036) do
     t.bigint "color_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "points"
+    t.integer "points", default: 0
     t.index ["color_id"], name: "index_buildings_on_color_id"
   end
 
@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 20180717230036) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "points"
+    t.integer "points", default: 0
   end
 
   create_table "staff_assistances", force: :cascade do |t|

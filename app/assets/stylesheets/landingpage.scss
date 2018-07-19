@@ -2,7 +2,7 @@
   Keyframes
 --------------------------- */
 
- 
+
  @keyframes draw {
   100% {
     stroke-dashoffset: 0;
@@ -79,23 +79,23 @@ svg {
 }
 
 .st0{
-  animation: fill-itstm .8s 2.5s forwards; 
+  animation: fill-itstm .8s 2.5s forwards;
 }
 
 .st1{
-  animation: fill-itstv .8s 2.5s forwards; 
+  animation: fill-itstv .8s 2.5s forwards;
 }
 
 .st2{
-  animation: fill-itsto .8s 2.5s forwards; 
+  animation: fill-itsto .8s 2.5s forwards;
 }
 
 .st3{
-  animation: fill-itstp .8s 2.5s forwards; 
+  animation: fill-itstp .8s 2.5s forwards;
 }
 
 .st4{
-  animation: fill-itstl .8s 2.5s forwards; 
+  animation: fill-itstl .8s 2.5s forwards;
 }
 
 
@@ -133,6 +133,7 @@ svg {
     .tecimg{
       position: absolute;
       right: 0px;
+      margin-top: -2rem;
     }
 }
 
@@ -153,7 +154,7 @@ svg {
     .tec{
       font-size: 0.7rem;
     }
-    
+
 }
 
 @media only screen and (max-width: 700px) and (min-width: 400px) {
@@ -175,7 +176,7 @@ svg {
 }
 
 .carousel-indicators li {
-    background-color: #000000; 
+    background-color: #000000;
 }
 .carousel-indicators .active {
     background-color: #ffffff;

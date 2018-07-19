@@ -1,0 +1,20 @@
+<body style="background-color: #002442" class="text-white">
+  <script src="https://rawgit.com/sitepoint-editors/jsqrcode/master/src/qr_packed.js"></script>
+  <%= render "layouts/navbarStaff" %>
+  <% if current_user.username == "staff" || current_user.username == "team" %>
+    <div class="container-fluid col-10" style="margin-top: 5rem;">
+    	<h2 class="mb-4">Asignación de Puntos</h2>
+    	<%= form_for @student_activity do |f| %>
+        <div class="form-group">
+          <label for="exampleFormControlSelect1">Actividad</label>
+          <%= f.select("activity_id", Activity.all.collect {|p| [ p.name, p.id ] }, { include_blank: "Selecciona una opción" }, { class:"form-control", id:"exampleFormControlSelect2", required: true}) %>
+
+        </div>
+        <div class="form-group">
+          <input type=text name="id" placeholder="   QR Code" class="qrcode-text rounded"><label class=qrcode-text-btn><input type=file accept="image/*" capture=environment onclick="return showQRIntro();" onchange="openQRCamera(this);" tabindex=-1></label>
+        </div>
+        <%= f.submit "Asignar Puntos", class:"btn text-white", style:"background-color: #97bf11" %>
+      <% end %>
+    </div>
+  <% end %>
+</body>

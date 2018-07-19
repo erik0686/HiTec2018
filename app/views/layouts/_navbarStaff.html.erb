@@ -9,9 +9,11 @@
 				<%= link_to "REGISTRO", registro_path, class:"nav-link text-white"%>
 			</li>
 			<li class="nav-item">
-				<%= link_to "PUNTOS", staffs_puntos_path, class:"nav-link text-white" %>
+				<%= link_to "PUNTOS", staff_puntos_path, class:"nav-link text-white" %>
 			</li>
 		</ul>
-		<%= image_tag "htlogo1.png", class: "img-fluid tecimg", alt: "Responsive Image" %>
+		<%= link_to(destroy_user_session_path, method: :delete) do %>
+			<%= image_tag "htlogo1.png", class: "img-fluid tecimg", alt: "Responsive Image" %>
+		<% end %>
 	</div>
 </nav>

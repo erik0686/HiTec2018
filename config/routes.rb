@@ -1,23 +1,22 @@
 Rails.application.routes.draw do
   devise_for :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resources :careers, only: [:index]
-  resources :students
+  resources :students, only: [:new, :create, :show]
   resources :home, only: [:index]
-  resources :colors
-  resources :buildings
-  resources :admins
-  resources :staffs
+  resources :staffs, only: [:new, :create, :show]
   resources :staff_assistances, only: [:new, :create]
+  resources :student_activities, only: [:new, :create]
   get 'registro', to: 'students#registro'
   post 'students/assign_team', to: 'students#assign_team'
+  post 'asignar_puntos', to: 'teams#asignar_puntos'
 
   get 'resources', to: 'teams#resources'
   get 'asistencia', to: 'staff_assistances#new', as: "asistencia"
   # Aqui esta la asistencia de lideres tambien
   get '/teams-puntos', to: 'teams#puntos'
 
-  get '/staffs-puntos', to: 'staffs#puntos'
+  get 'staff-puntos', to: 'student_activities#new', as: "staff-puntos"
+  get 'leaderboard', to: 'home#leaderboard', as: "leaderboard"
+
 
   post 'colors/agregar', to: 'colors#agregar'
   post 'buildings/agregar', to: 'buildings#agregar'

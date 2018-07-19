@@ -1,9 +1,20 @@
 class TeamsController < ApplicationController
-  def resources
+  skip_before_action :verify_authenticity_token, :only => [:puntos, :resources]
+  def resources; end
 
-  end
+  def puntos; end
 
-  def puntos
-
+  def asignar_puntos
+    if params[:Color] != ""
+      color = Color.find(params[:Color].to_i)
+      binding.pry
+      color.points += params[:CantidadPuntos].to_i
+      color.save
+    elsif params[:Edificio] != ""
+      building = Building.find(params[:Edificio].to_i)
+      building.points += params[:CantidadPuntos].to_i
+      building.save
+    end
+    redirect_to teams_puntos_path
   end
 end

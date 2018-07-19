@@ -10,8 +10,7 @@ class StaffAssistancesController < ApplicationController
     staff = Staff.find_by(matricula: params[:matricula])
     @staff_asistencia.staff_id = staff.id
     if @staff_asistencia.save
-      Drive.new(ENV["STAFF_SPREADSHEET"]).write_staff_assistance(params[:matricula], @staff_asistencia.assistance_id)
-      flash[:notice] = "Asistencia tomada"
+      Drive.new(ENV["STAFF_SPREADSHEET"]).write_staff_assistance(params[:matricula], @staff_asistencia.assistance.name)
       redirect_to asistencia_path
     else
       redirect_to asistencia_path

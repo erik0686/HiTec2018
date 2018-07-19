@@ -1,5 +1,6 @@
 $(document).ready(function(){
   $("#agregarColor").click(function(){
+    $(".btn").hide();
     var color_name = $("#color-agregar-HITEC").val();
     if(color_name != ""){
       $.ajax({
@@ -14,6 +15,7 @@ $(document).ready(function(){
   });
 
   $("#agregarEdificio").click(function(){
+    $(".btn").hide();
     var building_name = $("#edificio-agregar-HITEC").val();
     if(building_name != ""){
       $.ajax({
@@ -28,6 +30,7 @@ $(document).ready(function(){
   });
 
   $("#agregarActividad").click(function(){
+    $(".btn").hide();
     var activity_name = $("#actividad-agregar-HITEC").val();
     if(activity_name != ""){
       $.ajax({
