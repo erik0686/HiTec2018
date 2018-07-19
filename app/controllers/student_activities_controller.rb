@@ -1,5 +1,6 @@
 class StudentActivitiesController < ApplicationController
-
+  before_action :authenticate_user!, only: [:new]
+  
   def new
     @student_activity = StudentActivity.new
   end

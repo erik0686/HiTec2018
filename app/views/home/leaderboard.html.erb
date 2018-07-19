@@ -1,0 +1,34 @@
+<%= render "layouts/navbar" %>
+<table>
+  <thead>
+    <tr>
+        <th>Color</th>
+        <th>Puntos</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @colors.each do |color| %>
+      <tr>
+        <td><%= color.name %></td>
+        <td><%= color.points %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+        <th>Edificio</th>
+        <th>Puntos</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @buildings.each do |building| %>
+      <tr>
+        <td><%= "#{building.color.name} #{building.name}" %></td>
+        <td><%= building.points %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
