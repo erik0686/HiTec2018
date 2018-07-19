@@ -15,5 +15,5 @@ function openQRCamera(node) {
 }
 
 function showQRIntro() {
-  return confirm("Use your camera to take a picture of a QR code.");
+  //return confirm("Use your camera to take a picture of a QR code.");
 }

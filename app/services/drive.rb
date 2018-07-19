@@ -45,7 +45,7 @@ class Drive
     end
   end
 
-  def write_staff_assistance(id, activity)
+  def write_student_activity(id, activity)
     column_activity = 0
     (1..@ws.num_cols).each do |col|
       if @ws[1, col] == activity
@@ -54,7 +54,7 @@ class Drive
       end
     end
     (1..@ws.num_rows).each do |row|
-      if @ws[row, 1] == id
+      if @ws[row, 1] == id.to_s
         @ws[row, column_activity] = "Si"
         @ws.save
         @ws.reload

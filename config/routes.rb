@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :admins
   resources :staffs
   resources :staff_assistances, only: [:new, :create]
+  resources :student_activities, only: [:new, :create]
   get 'registro', to: 'students#registro'
   post 'students/assign_team', to: 'students#assign_team'
 
@@ -17,7 +18,7 @@ Rails.application.routes.draw do
   # Aqui esta la asistencia de lideres tambien
   get '/teams-puntos', to: 'teams#puntos'
 
-  get '/staffs-puntos', to: 'staffs#puntos'
+  get 'staff-puntos', to: 'student_activities#new', as: "staff-puntos"
 
   post 'colors/agregar', to: 'colors#agregar'
   post 'buildings/agregar', to: 'buildings#agregar'
