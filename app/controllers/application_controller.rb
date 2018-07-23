@@ -17,4 +17,8 @@ class ApplicationController < ActionController::Base
       request.env['omniauth.origin'] || stored_location_for(resource) || redirect_to(asistencia_path)
     end
   end
+
+  def after_sign_out_path_for(resource_or_scope)
+    user_session_path
+  end
 end
