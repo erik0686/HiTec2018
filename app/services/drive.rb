@@ -35,9 +35,16 @@ class Drive
   end
 
   def write_staff_assistance(matricula, assistance)
+    column_activity = 0
+    (1..@ws.num_cols).each do |col|
+      if @ws[1, col] == assistance
+        column_activity = col
+        break
+      end
+    end
     (1..@ws.num_rows).each do |row|
       if @ws[row, 5].include? matricula
-        @ws[row, 8 + assistance] = "Si"
+        @ws[row, column_activity] = "Si"
         @ws.save
         @ws.reload
         break
