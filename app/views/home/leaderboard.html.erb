@@ -1,34 +1,63 @@
-<%= render "layouts/navbar" %>
-<table>
-  <thead>
-    <tr>
-        <th>Color</th>
-        <th>Puntos</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @colors.each do |color| %>
-      <tr>
-        <td><%= color.name %></td>
-        <td><%= color.points %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<%= render "layouts/navbarform" %>
+<div class="container" style="margin-top: 5rem;">
+  <h2>Leaderboard</h2>
+  <canvas id="myChart"></canvas>
+</div>
 
-<table>
-  <thead>
-    <tr>
-        <th>Edificio</th>
-        <th>Puntos</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @buildings.each do |building| %>
-      <tr>
-        <td><%= "#{building.color.name} #{building.name}" %></td>
-        <td><%= building.points %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<script type="text/javascript">
+  var myMap = new Map();
+  myMap.set("Rojo", 'rgba(255, 0, 0, 0.7)');
+  myMap.set("Amarillo", 'rgba(255, 251, 0, 0.7)');
+  myMap.set("Verde", 'rgba(0, 255, 0, 0.7)');
+  myMap.set("Morado", 'rgba(153, 102, 255, 0.7)');
+  myMap.set("Naranja", 'rgba(255, 159, 64, 0.7)');
+  myMap.set("Rosa", 'rgba(255, 2, 194, 0.7)');
+  myMap.set("Blanco", 'rgba(255, 255, 255, 0.7)');
+  myMap.set("Plata", 'rgba(191, 191, 191, 0.7)');
+  myMap.set("Aqua", 'rgba(0, 255, 255, 0.7)');
+  myMap.set("Cafe", 'rgba(139, 69, 19, 0.7)');
+  var colors_points = []
+  var colors_rgba = []
+  <% @colors.each do |color| %>
+    colors_points.push(<%= color.points %>)
+  <% end %>
+  var colors_names = []
+  <% @colors.each do |color| %>
+    colors_names.push("<%= color.name %>")
+    colors_rgba.push(myMap.get("<%= color.name %>"))
+  <% end %>
+  var ctx = document.getElementById('myChart').getContext('2d');
+  var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: colors_names,
+        datasets: [{
+            label: 'Colores',
+            data: colors_points,
+            backgroundColor: colors_rgba,
+            borderColor: [
+                'rgba(0, 0, 0, 0.7)',
+                'rgba(0, 0, 0, 0.7)',
+                'rgba(0, 0, 0, 0.7)',
+                'rgba(0, 0, 0, 0.7)',
+                'rgba(0, 0, 0, 0.7)',
+                'rgba(0, 0, 0, 0.7)',
+                'rgba(0, 0, 0, 0.7)',
+                'rgba(0, 0, 0, 0.7)',
+                'rgba(0, 0, 0, 0.7)',
+                'rgba(0, 0, 0, 0.7)'
+            ],
+            borderWidth: 0.5
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
+    }
+  });
+</script>

@@ -1,5 +1,6 @@
 class TeamsController < ApplicationController
-  skip_before_action :verify_authenticity_token, :only => [:puntos, :resources]
+  skip_before_action :verify_authenticity_token, :only => [:puntos, :resources, :asignar_puntos]
+  before_action :authenticate_user!, only: [:puntos, :resources, :asignar_puntos]
   def resources; end
 
   def puntos; end
@@ -7,7 +8,6 @@ class TeamsController < ApplicationController
   def asignar_puntos
     if params[:Color] != ""
       color = Color.find(params[:Color].to_i)
-      binding.pry
       color.points += params[:CantidadPuntos].to_i
       color.save
     elsif params[:Edificio] != ""
