@@ -1,22 +1,24 @@
 <body style="background-color: #002442" class="text-white">
   <%= render "layouts/navbarTeam" %>
-  <div class="container" style="height: 100%; margin-top: 5rem;">
-    <h2 class="mb-4">Agregar Puntos Individuales</h2>
-    <form class="points_form" action="/asignar_puntos" method="POST">
-      <div class="form-group">
-        <label for="exampleFormControlSelect1">Color</label>
-        <%= select_tag "Color", options_from_collection_for_select(Color.all, "id", "name"), class:"form-control", id:"select_color", include_blank:true %>
-      </div>
-      <div class="form-group">
-        <label for="exampleFormControlSelect1">Edificio</label>
-        <%= select_tag "Edificio", options_from_collection_for_select(Building.all, "id", "color_building"), class:"form-control", id:"select_building", include_blank:true %>
-      </div>
-      <div class="invalid_feedback"></div>
-      <div class="form-group">
-        <label for="exampleFormControlSelect1">Puntos</label>
-        <%= select_tag "CantidadPuntos", "<option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>".html_safe, class:"form-control", required:true %>
-      </div>
-      <button type="submit" class="btn text-white" style="background-color: #97bf11">Asignar Puntos</button>
-    </form>
-  </div>
+  <% if current_user.username == "team" %>
+    <div class="container" style="height: 100%; margin-top: 5rem;">
+      <h2 class="mb-4">Agregar Puntos Individuales</h2>
+      <form class="points_form" action="/asignar_puntos" method="POST">
+        <div class="form-group">
+          <label for="exampleFormControlSelect1">Color</label>
+          <%= select_tag "Color", options_from_collection_for_select(Color.all, "id", "name"), class:"form-control", id:"select_color", include_blank:true %>
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlSelect1">Edificio</label>
+          <%= select_tag "Edificio", options_from_collection_for_select(Building.all, "id", "color_building"), class:"form-control", id:"select_building", include_blank:true %>
+        </div>
+        <div class="invalid_feedback"></div>
+        <div class="form-group">
+          <label for="exampleFormControlSelect1">Puntos</label>
+          <%= select_tag "CantidadPuntos", "<option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>".html_safe, class:"form-control", required:true %>
+        </div>
+        <button type="submit" class="btn text-white" style="background-color: #97bf11">Asignar Puntos</button>
+      </form>
+    </div>
+  <% end %>
 </body>
