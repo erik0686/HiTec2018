@@ -7,7 +7,6 @@
   <% end %>
 
   <% if current_user.username == "lider" || current_user.username == "team" %>
-
     <div class="container-fluid col-10" style="margin-top: 5rem;">
     	<h2 class="mb-4">Toma de Asistencia</h2>
       <%= form_for @staff_asistencia do |f| %>
