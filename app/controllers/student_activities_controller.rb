@@ -1,6 +1,6 @@
 class StudentActivitiesController < ApplicationController
   before_action :authenticate_user!, only: [:new]
-  
+
   def new
     @student_activity = StudentActivity.new
   end
@@ -15,8 +15,11 @@ class StudentActivitiesController < ApplicationController
   def points_for_staff(matricula)
     staff = Staff.find_by(matricula: matricula)
     building = Building.find(staff.building.id)
+    color = building.color
     building.points += 1
     building.save
+    color.points += 1
+    color.save
     redirect_to staff_puntos_path
   end
 
@@ -27,8 +30,11 @@ class StudentActivitiesController < ApplicationController
     if @student_activity.save
       Drive.new(ENV["STUDENTS_SPREADSHEET"]).write_student_activity(student.id, Activity.find(@student_activity.activity_id).name)
       building = Building.find(@student_activity.student.building.id)
+      color = building.color
       building.points += 1
       building.save
+      color.points += 1
+      color.save
       redirect_to staff_puntos_path
     else
       redirect_to staff_puntos_path

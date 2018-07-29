@@ -33,7 +33,7 @@ class BuildingsController < ApplicationController
     end
   end
 
-  def destroy
+  def borrar
     Building.all.each do |building|
       if building.name == params[:name]
         building.destroy

@@ -32,7 +32,7 @@ class ColorsController < ApplicationController
     end
   end
 
-  def destroy
+  def borrar
     @color = Color.find(params[:color_id])
     @color.destroy
   end

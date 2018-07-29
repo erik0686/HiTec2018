@@ -12,6 +12,9 @@ class TeamsController < ApplicationController
       color.save
     elsif params[:Edificio] != ""
       building = Building.find(params[:Edificio].to_i)
+      color = building.color
+      color.points += params[:CantidadPuntos].to_i
+      color.save
       building.points += params[:CantidadPuntos].to_i
       building.save
     end
