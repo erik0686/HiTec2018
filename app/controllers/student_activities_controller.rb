@@ -7,7 +7,8 @@ class StudentActivitiesController < ApplicationController
 
   def create
     @student_activity = StudentActivity.new(student_activity_params)
-    params[:id].size == 7 ? points_for_staff(params[:id], params[:activity_id]) : points_for_student(params[:id])
+    binding.pry
+    params[:id].size == 7 ? points_for_staff(params[:id], params[:student_activity][:activity_id]) : points_for_student(params[:id])
   end
 
   private
@@ -16,15 +17,16 @@ class StudentActivitiesController < ApplicationController
     staff = Staff.find_by(matricula: matricula)
     building = Building.find(staff.building.id)
     color = building.color
-
     if Activity.find(activity_id).name == "Lo tienes que vivir"
       building.points += 5
       color.points += 5
+      Drive.new(ENV["STAFF_SPREADSHEET"]).write_points_for_staff_rally(matricula, Activity.find(activity_id).name, "5")
     else
       building.points += 1
       color.points += 1
       staff.activity_counter += 1
       staff.save
+      Drive.new(ENV["STAFF_SPREADSHEET"]).write_points_for_staff_rally(matricula, Activity.find(activity_id).name, "1")
     end
 
     building.save

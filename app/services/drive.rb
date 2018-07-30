@@ -52,6 +52,24 @@ class Drive
     end
   end
 
+  def write_points_for_staff_rally(matricula, activity_name, points)
+    column_activity = 0
+    (1..@ws.num_cols).each do |col|
+      if @ws[1, col] == activity_name
+        column_activity = col
+        break
+      end
+    end
+    (1..@ws.num_rows).each do |row|
+      if @ws[row, 5].include? matricula
+        @ws[row, column_activity] = points
+        @ws.save
+        @ws.reload
+        break
+      end
+    end
+  end
+
   def write_student_activity(id, activity)
     column_activity = 0
     (1..@ws.num_cols).each do |col|
@@ -118,6 +136,12 @@ class Drive
         break
       end
     end
+    @ws.save
+    @ws.reload
+  end
+
+  def write_activity_in_spreadsheet(activity_name)
+    @ws[1, @ws.num_cols + 1] = activity_name
     @ws.save
     @ws.reload
   end
