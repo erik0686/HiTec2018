@@ -18,7 +18,7 @@
     </div>
     <div class="form-group">
       <%= label_tag "matrícula", nil, class:"label-separation" %>
-      <%= number_field_tag "matricula", nil, class:"form-control", step:1, min:0, pattern:"[0-9]{8}", type:"number", id:"matricula", required: true, placeholder:"Ej: 00463376", minlength:8, maxlength:8 %>
+      <%= text_field_tag "matricula", nil, class:"form-control", step:1, min:0, pattern:"[0-9]{8}", id:"matricula", required: true, placeholder:"Ej: 00463376", minlength:8, maxlength:8 %>
       <%= label(nil, nil, "Tu matrícula es sin A.", class:"form-text text-muted") %>
     </div>
     <div class="form-group">

@@ -102,10 +102,9 @@ class Drive
       end
     end
     unless found
-      @ws[num_rows + 1, 1] = id
-      @ws[num_rows + 1, 4] = matricula
-      @ws.save
-      @ws.reload
+      @ws[@ws.num_rows + 1, 1] = id
+      @ws[@ws.num_rows, 2] = "NO IDENTIFICADO"
+      @ws[@ws.num_rows, 4] = matricula
     end
     @ws.save
     @ws.reload
