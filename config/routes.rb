@@ -16,11 +16,15 @@ Rails.application.routes.draw do
 
   get 'staff-puntos', to: 'student_activities#new', as: "staff-puntos"
   get 'leaderboard', to: 'home#leaderboard', as: "leaderboard"
+  get 'stats', to: 'home#stats', as: "stats"
+  get 'puntos', to: 'home#puntos', as: "puntos"
 
 
   post 'colors/agregar', to: 'colors#agregar'
   post 'buildings/agregar', to: 'buildings#agregar'
   post 'activities/agregar', to: 'activities#agregar'
+  post 'teams/duplicar_puntos_staff', to: 'teams#duplicar_puntos_staff'
+  post 'teams/duplicar_puntos_student', to: 'teams#duplicar_puntos_student'
 
   delete 'activities/borrar', to: 'activities#borrar'
   delete 'buildings/borrar', to: 'buildings#borrar'

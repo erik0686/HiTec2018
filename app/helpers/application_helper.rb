@@ -31,4 +31,18 @@ module ApplicationHelper
   def id_color_building
     Building.all.map{ |b| ["#{b.color.name} #{b.name}", b.id]}
   end
+
+  def color_building(building)
+    "#{building.color.name} #{building.name}"
+  end
+
+  def quantity_per_career(career)
+    career_student = []
+    Student.all.each do |student|
+      if student.career == career
+        career_student << student
+      end
+    end
+    career_student.count
+  end
 end

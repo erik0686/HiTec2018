@@ -1,0 +1,21 @@
+<body style="background-color: #002442" class="text-white">
+  <%= render "layouts/navbarSimple" %>
+
+  <div class="container" style="height: 100%; margin-top: 5rem;">
+    <h2 class="mb-4">Estadísticas</h2>
+    <table class="table">
+      <tr>
+        <th>Carrera</th>
+        <th>Cantidad</th>
+      </tr>
+        <tbody>
+          <% @careers.each do |career| %>
+            <tr>
+              <td><%= career %></td>
+              <td><%= quantity_per_career(career) %></td>
+            </tr>
+          <% end %>
+        </tbody>
+    </table>
+  </div>
+</body>
