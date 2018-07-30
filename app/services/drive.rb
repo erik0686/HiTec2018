@@ -93,11 +93,18 @@ class Drive
   end
 
   def preregister_student(id, matricula)
+    found = false
     (1..@ws.num_rows).each do |row|
       if(@ws[row,4] == matricula)
+        found = true
         @ws[row,1] = id
         break
       end
+    end
+    unless found
+      @ws[@ws.num_rows + 1, 1] = id
+      @ws[@ws.num_rows, 2] = "NO IDENTIFICADO"
+      @ws[@ws.num_rows, 4] = matricula
     end
     @ws.save
     @ws.reload

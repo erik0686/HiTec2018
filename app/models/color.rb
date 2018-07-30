@@ -1,5 +1,7 @@
 class Color < ApplicationRecord
   has_many :buildings, dependent: :destroy
+  scope :by_points, -> { order(points: :desc) }
+  
 
   # def update_points
   #   points = 0

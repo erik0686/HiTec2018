@@ -19,6 +19,14 @@
         </div>
         <button type="submit" class="btn text-white" style="background-color: #97bf11">Asignar Puntos</button>
       </form>
-    </div>
+      <br><br>
+      <button type="submit" class="btn btn-danger text-white" id="duplicar_puntos_staff" style="background-color: red">Duplicar Puntos Staff</button>
+      <br><br><br>
+      <form>
+        <%= select_tag "Actividad a revisar", "<option> BTDT </option><option> SYJ </option><option> David Garza </option>".html_safe, required: true, class:"form-control", id:"select_activity", include_blank:true %>
+        <br>
+        <button type="submit" class="btn btn-danger text-white" id="duplicar_puntos_student" style="background-color: red">Duplicar Puntos Alumno</button>
+      </form>
+      </div>
   <% end %>
 </body>

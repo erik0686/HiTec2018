@@ -7,19 +7,29 @@ class StudentActivitiesController < ApplicationController
 
   def create
     @student_activity = StudentActivity.new(student_activity_params)
-    params[:id].size == 7 ? points_for_staff(params[:id]) : points_for_student(params[:id])
+    params[:id].size == 7 ? points_for_staff(params[:id], params[:activity_id]) : points_for_student(params[:id])
   end
 
   private
 
-  def points_for_staff(matricula)
+  def points_for_staff(matricula, activity_id)
     staff = Staff.find_by(matricula: matricula)
     building = Building.find(staff.building.id)
     color = building.color
-    building.points += 1
+
+    if Activity.find(activity_id).name == "Lo tienes que vivir"
+      building.points += 5
+      color.points += 5
+    else
+      building.points += 1
+      color.points += 1
+      staff.activity_counter += 1
+      staff.save
+    end
+
     building.save
-    color.points += 1
     color.save
+
     redirect_to staff_puntos_path
   end
 

@@ -1,0 +1,39 @@
+<body style="background-color: #002442" class="text-white">
+  <%= render "layouts/navbarSimple" %>
+
+  <div class="container" style="height: 100%; margin-top: 5rem;">
+    <h2 class="mb-4">Estadísticas</h2>
+    <h3> Edificios </h3>
+    <table class="table">
+      <tr>
+        <th>Edificio</th>
+        <th>Puntos</th>
+      </tr>
+        <tbody>
+          <% @buildings.each do |building| %>
+            <tr>
+              <td><%=color_building(building) %></td>
+              <td><%= building.points %></td>
+            </tr>
+          <% end %>
+      </tbody>
+    </table>
+
+    <br><br>
+    <h3> Colores </h3>
+    <table class="table">
+      <tr>
+        <th>Color</th>
+        <th>Puntos</th>
+      </tr>
+        <tbody>
+          <% @colors.each do |color| %>
+            <tr>
+              <td><%= color.name %></td>
+              <td><%= color.points %></td>
+            </tr>
+          <% end %>
+        </tbody>
+    </table>
+  </div>
+</body>
