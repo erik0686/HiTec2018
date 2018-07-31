@@ -7,7 +7,6 @@ class StudentActivitiesController < ApplicationController
 
   def create
     @student_activity = StudentActivity.new(student_activity_params)
-    binding.pry
     params[:id].size == 7 ? points_for_staff(params[:id], params[:student_activity][:activity_id]) : points_for_student(params[:id])
   end
 

@@ -25,7 +25,7 @@ module ApplicationHelper
     ["ARQ", "IBT", "IBTt", "IC", "IDA", "IDS", "IFI", "IIA", "IID", "IIDt", "IIS", "IMA", "IMD", "IME",
     "IMI", "IMT", "INCQ", "INT", "IQA", "IQP", "ISDR", "ITC", "ITIt", "LAD", "LADt", "LAE", "LAEt",
     "LAF", "LBCt", "LCDE", "LCMD", "LCMDt", "LCPF","LDI", "LDIt", "LDF", "LEC", "LED", "LEM", "LIN",
-    "LLE", "LNB", "LPL", "LPM", "LPO", "LPS", "LRI", "LTSt", "MC", "MO"]
+    "LLE", "LNB", "LPL", "LPM", "LPO", "LPS", "LRI", "LTSt", "MC", "MO"] 
   end
 
   def id_color_building

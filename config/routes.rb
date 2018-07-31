@@ -25,6 +25,8 @@ Rails.application.routes.draw do
   post 'activities/agregar', to: 'activities#agregar'
   post 'teams/duplicar_puntos_staff', to: 'teams#duplicar_puntos_staff'
   post 'teams/duplicar_puntos_student', to: 'teams#duplicar_puntos_student'
+  post 'staffs/actualizar_drive_staff', to: 'staffs#actualizar_drive_staff'
+
 
   delete 'activities/borrar', to: 'activities#borrar'
   delete 'buildings/borrar', to: 'buildings#borrar'
