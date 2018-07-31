@@ -36,7 +36,7 @@ class StudentsController < ApplicationController
   private
 
   def student_params
-    params.require(:student).permit(:career)
+    params.require(:student).permit(:career, :vegan)
   end
 
   def getBuilding

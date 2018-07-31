@@ -9,6 +9,8 @@ class HomeController < ApplicationController
 
   def stats
     @careers = get_careers
+    @vegano = Student.where(vegan: "Si")
+    @no_vegano = Student.where(vegan: "No")
   end
 
   def puntos

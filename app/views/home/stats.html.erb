@@ -2,7 +2,7 @@
   <%= render "layouts/navbarSimple" %>
 
   <div class="container" style="height: 100%; margin-top: 5rem;">
-    <h2 class="mb-4">Estadísticas</h2>
+    <h2 class="mb-4">Estadísticas por Carrera</h2>
     <table class="table">
       <tr>
         <th>Carrera</th>
@@ -18,4 +18,23 @@
         </tbody>
     </table>
   </div>
+
+  <h2 class="mb-4" style="margin-left:5rem;">Cantidad de vegetarianos</h2>
+  <table class="table" style="margin: 5rem;">
+    <tr>
+      <th>Vegano?</th>
+      <th>Cantidad</th>
+    </tr>
+      <tbody>
+        <tr>
+          <td>Si</td>
+          <td><%= @vegano.count %></td>
+        </tr>
+        <tr>
+          <td>No</td>
+          <td><%= @no_vegano.count %></td>
+        </tr>
+      </tbody>
+  </table>
+</div>
 </body>
