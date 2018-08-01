@@ -17,23 +17,21 @@ class Drive
     end
   end
 
-  def write_staff(staffs)
-    staffs.each do |staff|
-      next_line = @ws.num_rows
-      if staff.role == "Capitán/a de edificio"
-        building = Building.find(staff.building_id)
-        @ws[next_line + 1, 8] = "#{building.color.name} #{building.name}"
-      end
-      @ws[next_line + 1, 1] = staff.sex
-      @ws[next_line + 1, 2] = staff.name
-      @ws[next_line + 1, 3] = staff.last_name_1
-      @ws[next_line + 1, 4] = staff.last_name_2
-      @ws[next_line + 1, 5] = staff.matricula
-      @ws[next_line + 1, 6] = staff.career
-      @ws[next_line + 1, 7] = staff.role
+  def write_staff(staff)
+    next_line = @ws.num_rows
+    if staff.role == "Capitán/a de edificio"
+      building = Building.find(staff.building_id)
+      @ws[next_line + 1, 8] = "#{building.color.name} #{building.name}"
     end
-    @ws.save
-    @ws.reload
+    @ws[next_line + 1, 1] = staff.sex
+    @ws[next_line + 1, 2] = staff.name
+    @ws[next_line + 1, 3] = staff.last_name_1
+    @ws[next_line + 1, 4] = staff.last_name_2
+    @ws[next_line + 1, 5] = staff.matricula
+    @ws[next_line + 1, 6] = staff.career
+    @ws[next_line + 1, 7] = staff.role
+  @ws.save
+  @ws.reload
   end
 
   def write_staff_assistance(matricula, assistance)
