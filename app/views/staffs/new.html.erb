@@ -22,7 +22,7 @@
       </div>
       <div class="form-group">
         <label for="user">Matrícula</label>
-        <%= f.text_field :matricula, class:"form-control", placeholder:"Ej. 1463376", required:true, minlength: 7, maxlength: 7%>
+        <%= f.text_field :matricula, class:"form-control", placeholder:"Ej. 1463376", pattern:"[0-9]{7}", required:true, minlength: 7, maxlength: 7%>
         <small>Introduce tu matrícula sin A0.</small>
       </div>
       <div class="form-group">
