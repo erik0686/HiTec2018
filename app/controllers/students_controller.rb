@@ -7,9 +7,7 @@ class StudentsController < ApplicationController
 
   def create
     @student = Student.new(student_params)
-    binding.pry
     @student.career = career_options_with_description[@student.career]
-    binding.pry
     matricula = params[:matricula]
     if @student.save
       Drive.new(ENV["STUDENTS_SPREADSHEET"]).preregister_student(@student.id, params[:matricula])
