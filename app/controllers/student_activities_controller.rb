@@ -19,13 +19,13 @@ class StudentActivitiesController < ApplicationController
     if Activity.find(activity_id).name == "Lo tienes que vivir"
       building.points += 5
       color.points += 5
-      Drive.new(ENV["STAFF_SPREADSHEET"]).write_points_for_staff_rally(matricula, Activity.find(activity_id).name, "5")
+      # Drive.new(ENV["STAFF_SPREADSHEET"]).write_points_for_staff_rally(matricula, Activity.find(activity_id).name, "5")
     else
       building.points += 1
       color.points += 1
       staff.activity_counter += 1
       staff.save
-      Drive.new(ENV["STAFF_SPREADSHEET"]).write_points_for_staff_rally(matricula, Activity.find(activity_id).name, "1")
+      # Drive.new(ENV["STAFF_SPREADSHEET"]).write_points_for_staff_rally(matricula, Activity.find(activity_id).name, "1")
     end
 
     building.save
@@ -39,7 +39,7 @@ class StudentActivitiesController < ApplicationController
     student = Student.find(id)
     @student_activity.student_id = student.id
     if @student_activity.save
-      Drive.new(ENV["STUDENTS_SPREADSHEET"]).write_student_activity(student.id, Activity.find(@student_activity.activity_id).name)
+      # Drive.new(ENV["STUDENTS_SPREADSHEET"]).write_student_activity(student.id, Activity.find(@student_activity.activity_id).name)
       building = Building.find(@student_activity.student.building.id)
       color = building.color
       building.points += 1
