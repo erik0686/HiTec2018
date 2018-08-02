@@ -1,5 +1,7 @@
 class StudentActivitiesController < ApplicationController
   before_action :authenticate_user!, only: [:new]
+  skip_before_action :verify_authenticity_token
+
 
   def new
     @student_activity = StudentActivity.new
