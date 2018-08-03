@@ -18,7 +18,7 @@ class StudentActivitiesController < ApplicationController
     staff = Staff.find_by(matricula: matricula)
     building = Building.find(staff.building.id)
     color = building.color
-    if Activity.find(activity_id).name == "Lo tienes que vivir"
+    if Activity.find(activity_id).name != "David Garza"
       building.points += 5
       color.points += 5
       # Drive.new(ENV["STAFF_SPREADSHEET"]).write_points_for_staff_rally(matricula, Activity.find(activity_id).name, "5")

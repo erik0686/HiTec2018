@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   get '/teams-puntos', to: 'teams#puntos'
 
   get 'staff-puntos', to: 'student_activities#new', as: "staff-puntos"
-  get 'leaderboard', to: 'home#leaderboard', as: "leaderboard"
+  # get 'leaderboard', to: 'home#leaderboard', as: "leaderboard"
   get 'stats', to: 'home#stats', as: "stats"
   get 'puntos', to: 'home#puntos', as: "puntos"
 
